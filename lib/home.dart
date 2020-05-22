@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/widgets/navDrawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -84,6 +85,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavDrawer(),
       appBar: AppBar(
         backgroundColor: Colors.black87,
         title: _issearching ? searchBar : textbar,

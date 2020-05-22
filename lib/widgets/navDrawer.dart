@@ -8,6 +8,22 @@ class NavDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
+          Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: 15.0 * (MediaQuery.of(context).size.width / 454.7),
+              vertical: 15.0 * (MediaQuery.of(context).size.height / 1010.5),
+            ),
+            height: 325 * (MediaQuery.of(context).size.width / 454.7),
+            decoration: BoxDecoration(
+              color: Colors.transparent,
+              image: DecorationImage(
+                fit: BoxFit.contain,
+                image: AssetImage(
+                  'assets/images/pokedex.png',
+                ),
+              ),
+            ),
+          ),
           ListTile(
             title: Text(
               'Pokédex',
