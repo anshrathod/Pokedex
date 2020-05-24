@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/screens/pokelist.dart';
 import 'package:pokedex/widgets/navDrawer.dart';
 
 class HomePage extends StatefulWidget {
@@ -115,7 +116,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Container(),
+      body: AllPoke(),
     );
   }
 }
