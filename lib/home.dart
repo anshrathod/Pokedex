@@ -116,7 +116,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: AllPoke(),
+      body: AllPoke(searchterm: searchterm),
     );
   }
 }

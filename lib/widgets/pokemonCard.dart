@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:pokedex/constants/colors.dart';
 import 'package:pokedex/constants/commonFunctions.dart';
 
+// ignore: must_be_immutable
 class PokemonCard extends StatelessWidget {
-  Map<String, dynamic> pokemondata;
+  List<dynamic> pokemondata;
   BuildContext context;
   List<Widget> typelist = [];
 
   PokemonCard({this.pokemondata, this.context}) {
-    for (var j = 0; j < [2].length; j++) {
+    for (var j = 0; j < pokemondata[2].length; j++) {
       typelist.add(
         Padding(
           padding: EdgeInsets.only(

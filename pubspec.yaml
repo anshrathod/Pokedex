@@ -20,7 +20,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/types/
     - .env
+    - assets/data/
   fonts:
     - family: Poppins
       fonts:

@@ -14,7 +14,7 @@ class _AllPokeState extends State<AllPoke> {
   var pokemondata;
   var listdata;
   var searchterm;
-  _AllPokeState({this.searchterm}) {}
+  _AllPokeState({this.searchterm});
 
   List<Widget> tileList;
 
@@ -86,7 +86,6 @@ class _AllPokeState extends State<AllPoke> {
 
   @override
   Widget build(BuildContext context) {
-    var numItems = listdata.length;
     print("Widget: " + widget.searchterm);
     return ListView(
       scrollDirection: Axis.vertical,
