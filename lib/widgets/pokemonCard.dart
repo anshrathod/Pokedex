@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/constants/colors.dart';
 import 'package:pokedex/constants/commonFunctions.dart';
+import 'package:pokedex/screens/pokemon.dart';
 
 // ignore: must_be_immutable
 class PokemonCard extends StatelessWidget {
@@ -66,7 +67,16 @@ class PokemonCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PokePage(
+                pokename: pokemondata[0],
+              ),
+            ),
+          );
+        },
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
