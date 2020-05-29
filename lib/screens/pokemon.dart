@@ -346,7 +346,10 @@ class _PokePageState extends State<PokePage> with TickerProviderStateMixin {
                 ),
                 body: TabBarView(
                   children: [
-                    AboutTab(),
+                    AboutTab(
+                      pokedata: pokemondata,
+                      pokename: pokename,
+                    ),
                     StatsTab(),
                     EvolutionsTab(),
                     MovesTab(),
