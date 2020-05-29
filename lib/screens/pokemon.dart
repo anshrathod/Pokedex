@@ -3,6 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:pokedex/constants/colors.dart';
 import 'package:pokedex/constants/commonFunctions.dart';
+import 'package:pokedex/tabs/about.dart';
+import 'package:pokedex/tabs/evolutions.dart';
+import 'package:pokedex/tabs/moves.dart';
+import 'package:pokedex/tabs/stats.dart';
 
 class PokePage extends StatefulWidget {
   final pokename;
@@ -342,10 +346,10 @@ class _PokePageState extends State<PokePage> with TickerProviderStateMixin {
                 ),
                 body: TabBarView(
                   children: [
-                    Container(),
-                    Container(),
-                    Container(),
-                    Container(),
+                    AboutTab(),
+                    StatsTab(),
+                    EvolutionsTab(),
+                    MovesTab(),
                   ],
                 ),
               ),
