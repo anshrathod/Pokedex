@@ -7,6 +7,7 @@ import 'package:pokedex/tabs/about.dart';
 import 'package:pokedex/tabs/evolutions.dart';
 import 'package:pokedex/tabs/moves.dart';
 import 'package:pokedex/tabs/stats.dart';
+import 'package:pokedex/widgets/pokeCardDialog.dart';
 
 class PokePage extends StatefulWidget {
   final pokename;
@@ -399,7 +400,14 @@ class _PokePageState extends State<PokePage> with TickerProviderStateMixin {
           Padding(
             padding: EdgeInsets.all(15.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) => PokeCardDialog(
+                    pokename: pokename,
+                  ),
+                );
+              },
               child: Image.asset(
                 'assets/images/pokeball.jpeg',
                 height: 150,
