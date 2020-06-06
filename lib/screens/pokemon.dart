@@ -358,7 +358,10 @@ class _PokePageState extends State<PokePage> with TickerProviderStateMixin {
                       pokedata: pokemondata,
                       pokename: pokename,
                     ),
-                    MovesTab(),
+                    MovesTab(
+                      pokedata: pokemondata,
+                      pokename: pokename,
+                    ),
                   ],
                 ),
               ),
