@@ -1,7 +1,9 @@
-// import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex/services/shareAndWrite.dart';
 
 class NavDrawer extends StatelessWidget {
+  final ShareAndWrite _sw = ShareAndWrite();
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -65,7 +67,9 @@ class NavDrawer extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              _sw.sharemyapp();
+            },
             child: ListTile(
               leading: Icon(Icons.share),
               title: Text(
@@ -80,7 +84,9 @@ class NavDrawer extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              _sw.sendMail();
+            },
             child: ListTile(
               leading: Icon(Icons.border_color),
               title: Text(
@@ -95,7 +101,9 @@ class NavDrawer extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              _sw.rateus();
+            },
             child: ListTile(
               leading: Icon(Icons.star_border),
               title: Text(

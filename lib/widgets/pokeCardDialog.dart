@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:pokedex/constants/commonFunctions.dart';
+import 'package:pokedex/services/shareAndWrite.dart';
 
 class PokeCardDialog extends StatelessWidget {
   String pokename;
-
+  ShareAndWrite _sw = ShareAndWrite();
   PokeCardDialog({this.pokename});
   @override
   Widget build(BuildContext context) {
@@ -85,6 +85,7 @@ class PokeCardDialog extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
+                    _sw.downloadpokemon(pokename);
                     Navigator.of(context).pop();
                   },
                   shape: RoundedRectangleBorder(
@@ -114,6 +115,7 @@ class PokeCardDialog extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
+                    _sw.sharemywithImage(pokename);
                     Navigator.of(context).pop();
                   },
                   shape: RoundedRectangleBorder(

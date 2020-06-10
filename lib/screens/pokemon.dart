@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:pokedex/constants/colors.dart';
 import 'package:pokedex/constants/commonFunctions.dart';
+import 'package:pokedex/services/shareAndWrite.dart';
 import 'package:pokedex/tabs/about.dart';
 import 'package:pokedex/tabs/evolutions.dart';
 import 'package:pokedex/tabs/moves.dart';
@@ -23,7 +24,7 @@ class _PokePageState extends State<PokePage> with TickerProviderStateMixin {
   _PokePageState({this.pokename});
   TabController _tabController;
   String generation;
-
+  ShareAndWrite _sw = ShareAndWrite();
   @override
   void initState() {
     loadData();
@@ -418,7 +419,9 @@ class _PokePageState extends State<PokePage> with TickerProviderStateMixin {
           Padding(
             padding: EdgeInsets.all(15.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                _sw.sharemywithImage(pokename);
+              },
               child: Icon(Icons.share),
             ),
           ),
