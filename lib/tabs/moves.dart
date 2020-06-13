@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:pokedex/constants/colors.dart';
+import 'package:pokedex/screens/specificMove.dart';
 
 class MovesTab extends StatefulWidget {
   final String pokename;
@@ -30,7 +31,14 @@ class _MovesTabState extends State<MovesTab> {
             Card(
               color: colors[jsonResult[v[i]]['type'].toString().toLowerCase()],
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SpecificMove(pokemove: v[i]),
+                    ),
+                  );
+                },
                 child: Container(
                   child: Row(
                     children: <Widget>[
