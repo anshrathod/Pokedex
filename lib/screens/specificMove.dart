@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:pokedex/constants/colors.dart';
+import 'package:pokedex/screens/typeChart.dart';
 
 class SpecificMove extends StatefulWidget {
   final pokemove;
@@ -54,7 +55,16 @@ class _SpecificMoveState extends State<SpecificMove> {
     for (var i = 0; i < typechart['strengths'].length; i++) {
       temp.add(
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TypeChart(
+                  type: typechart['strengths'][i].toString().toLowerCase(),
+                ),
+              ),
+            );
+          },
           child: Padding(
             padding: EdgeInsets.only(
               right: 10.0 * (MediaQuery.of(context).size.width / 454.7),
@@ -120,7 +130,16 @@ class _SpecificMoveState extends State<SpecificMove> {
     for (var i = 0; i < typechart['weakness'].length; i++) {
       temp2.add(
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TypeChart(
+                  type: typechart['weakness'][i].toString().toLowerCase(),
+                ),
+              ),
+            );
+          },
           child: Padding(
             padding: EdgeInsets.only(
               right: 10.0 * (MediaQuery.of(context).size.width / 454.7),
@@ -185,7 +204,17 @@ class _SpecificMoveState extends State<SpecificMove> {
     for (var i = 0; i < typechart['extreme weakness'].length; i++) {
       temp3.add(
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TypeChart(
+                  type:
+                      typechart['extreme weakness'][i].toString().toLowerCase(),
+                ),
+              ),
+            );
+          },
           child: Padding(
             padding: EdgeInsets.only(
               right: 10.0 * (MediaQuery.of(context).size.width / 454.7),
@@ -254,7 +283,16 @@ class _SpecificMoveState extends State<SpecificMove> {
     for (var i = 0; i < typechart['normal'].length; i++) {
       temp4.add(
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TypeChart(
+                  type: typechart['normal'][i].toString().toLowerCase(),
+                ),
+              ),
+            );
+          },
           child: Padding(
             padding: EdgeInsets.only(
               right: 10.0 * (MediaQuery.of(context).size.width / 454.7),
@@ -409,7 +447,16 @@ class _SpecificMoveState extends State<SpecificMove> {
                       ),
                     ),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TypeChart(
+                              type: movedata['type'].toString().toLowerCase(),
+                            ),
+                          ),
+                        );
+                      },
                       child: Padding(
                         padding: EdgeInsets.only(
                           left:

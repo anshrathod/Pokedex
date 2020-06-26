@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:pokedex/constants/colors.dart';
 import 'package:pokedex/constants/commonFunctions.dart';
+import 'package:pokedex/screens/typeChart.dart';
 import 'package:pokedex/services/shareAndWrite.dart';
 import 'package:pokedex/tabs/about.dart';
 import 'package:pokedex/tabs/evolutions.dart';
@@ -68,7 +69,16 @@ class _PokePageState extends State<PokePage> with TickerProviderStateMixin {
     for (var j = 0; j < pokemondata['type'].length; j++) {
       typelist.add(
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TypeChart(
+                  type: pokemondata['type'][j].toString().toLowerCase(),
+                ),
+              ),
+            );
+          },
           child: Padding(
             padding: EdgeInsets.only(
               left: 20.0 * (MediaQuery.of(context).size.width / 454.7),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/screens/typeChart.dart';
 import 'package:pokedex/services/shareAndWrite.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -52,7 +53,16 @@ class NavDrawer extends StatelessWidget {
             height: 10 * MediaQuery.of(context).size.height / 1000,
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TypeChart(
+                    type: "normal",
+                  ),
+                ),
+              );
+            },
             child: ListTile(
               leading: Icon(Icons.multiline_chart),
               title: Text(
