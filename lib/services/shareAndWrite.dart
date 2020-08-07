@@ -54,14 +54,12 @@ class ShareAndWrite {
       Permission.storage,
     ].request();
 
-    final info = statuses[Permission.storage].toString();
-    // print(info);
-    // _toastInfo(info);
+    final _ = statuses[Permission.storage].toString();
   }
 
-  downloadpokemon(pokemon_name) async {
+  downloadpokemon(pokemonName) async {
     _requestPermission();
-    List<String> w = pokemon_name.toString().toLowerCase().split(" ");
+    List<String> w = pokemonName.toString().toLowerCase().split(" ");
     var response = await Dio().get(
         "https://raw.githubusercontent.com/abhiratt/pokecards/master/images/" +
             w.join('_') +
@@ -70,11 +68,11 @@ class ShareAndWrite {
     final result = await ImageGallerySaver.saveImage(
       Uint8List.fromList(response.data),
       quality: 60,
-      name: capitalizeName(pokemon_name),
+      name: capitalizeName(pokemonName),
     );
     print(result);
     _toastInfo(
-        capitalizeName(pokemon_name) + "'s Pok\u00e9Card has been downloaded.");
+        capitalizeName(pokemonName) + "'s Pok\u00e9Card has been downloaded.");
   }
 
   rateus() {

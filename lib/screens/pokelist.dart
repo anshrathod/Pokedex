@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex/widgets/pokemonCard.dart';
 
@@ -86,10 +87,28 @@ class _AllPokeState extends State<AllPoke> {
 
   @override
   Widget build(BuildContext context) {
+    var numItems = 1024;
+    ScrollController _semicircleController = ScrollController();
     print("Widget: " + widget.searchterm);
-    return ListView(
-      scrollDirection: Axis.vertical,
-      children: tileList,
+    return DraggableScrollbar.semicircle(
+      labelTextBuilder: (offset) {
+        print(_semicircleController.position);
+        final int currentItem = true
+            ? (_semicircleController.offset /
+                    _semicircleController.position.maxScrollExtent *
+                    numItems)
+                .floor()
+            : 0;
+
+        return Text("$currentItem");
+      },
+      labelConstraints: BoxConstraints.tightFor(width: 80.0, height: 30.0),
+      controller: _semicircleController,
+      child: ListView(
+        scrollDirection: Axis.vertical,
+        controller: _semicircleController,
+        children: tileList,
+      ),
     );
   }
 }

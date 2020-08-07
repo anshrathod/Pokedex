@@ -18,6 +18,7 @@ dependencies:
   dio: ^3.0.10
   fluttertoast: ^7.0.2
   permission_handler: ^5.0.1+1
+  draggable_scrollbar: ^0.0.4
 
 dev_dependencies:
   flutter_test:

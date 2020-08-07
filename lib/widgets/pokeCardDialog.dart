@@ -4,8 +4,8 @@ import 'package:pokedex/constants/commonFunctions.dart';
 import 'package:pokedex/services/shareAndWrite.dart';
 
 class PokeCardDialog extends StatelessWidget {
-  String pokename;
-  ShareAndWrite _sw = ShareAndWrite();
+  final String pokename;
+  final ShareAndWrite _sw = ShareAndWrite();
   PokeCardDialog({this.pokename});
   @override
   Widget build(BuildContext context) {
