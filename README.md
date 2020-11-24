@@ -34,3 +34,21 @@ From <b>Bulbasaur</b> to <b>Eternamax</b>, <b>Pikachu</b> to <b>Arcotozolt</b>, 
 	<img src="https://play-lh.googleusercontent.com/2YYNW2TR5LU27Co4c6UCIiHn6KCn1nBgpRRgTZorysmiAYrUyFnd9jNtkEAVlZrtfw=w720-h310-rw"/>
 	<img src="https://play-lh.googleusercontent.com/EIJiCf0TLRoPPUqhJErm7Z7V-X1blbXIornQgNDx2EAhxLf48pXx6sF5VlhNnOYhLEo=w720-h310-rw">
 </div>
+
+### Instructions
+1. Download or clone the repo.
+```dart
+git clone https://github.com/anshrathod/Pokedex
+```
+2. Go the parent directory of the repository.
+```dart
+cd Pokedex
+```
+3. Download all the dependencies.
+```dart
+flutter pub get
+```
+4. Connect your phone to the laptop via USB. And, then run the code.
+```dart
+flutter run
+```
